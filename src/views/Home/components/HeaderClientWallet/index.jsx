@@ -9,6 +9,7 @@ const HeaderClientWallet = ({ children }) =>
       ) : (
         <CustomButton
           buttonClass={`p-0 d-flex justify-content-center ${element.buttonMargin}`}
+          onClick={element.onClick}
           color={element.color}
           text={
             <CustomImage

@@ -1,6 +1,6 @@
 import { SpinnerGrow } from "@/components";
 import { useState } from "react";
-import { Image } from "./styled-components";
+import { Image, WrapImage } from "./styled-components";
 
 const CustomImage = ({
   imageClass = "imageClass",
@@ -9,12 +9,20 @@ const CustomImage = ({
   alt = "image",
   title = "",
   color = "info",
-  imgWidth = "100%"
+  imgWidth = "100%",
+  wrapDisplay,
+  wrapJustify,
+  wrapAlignItems
 }) => {
   const [loadingImage, setLoadingImage] = useState(true);
 
   return (
-    <div className={wrapImgClass}>
+    <WrapImage
+      className={wrapImgClass}
+      wrapDisplay={wrapDisplay}
+      wrapJustify={wrapJustify}
+      wrapAlignItems={wrapAlignItems}
+    >
       {loadingImage && <SpinnerGrow color={color} />}
       <Image
         className={imageClass}
@@ -25,7 +33,7 @@ const CustomImage = ({
         width={imgWidth}
         onLoad={() => setLoadingImage(false)}
       />
-    </div>
+    </WrapImage>
   );
 };
 export default CustomImage;

@@ -6,25 +6,25 @@ const fontFamily = "'Rubik', sans-serif";
 
 const typography = {
   mobileTitle: () => css`
-    font: 700 33px/40px ${fontFamily};
+    font: 700 30px/40px ${fontFamily};
   `,
   mobileSsubTitle: () => css`
-    font: 400 23px/16px ${fontFamily};
+    font: 400 20px/16px ${fontFamily};
   `,
   mobileInputText: () => css`
-    font: 400 13px/14px ${fontFamily};
+    font: 400 15px/14px ${fontFamily};
   `,
   mobileSmallText: () => css`
     font: 300 11px/20px ${fontFamily};
   `,
   title: () => css`
-    font: 700 40px/76px ${fontFamily};
+    font: 700 34px/76px ${fontFamily};
   `,
   subTitle: () => css`
-    font: 400 30px/20px ${fontFamily};
+    font: 400 24px/20px ${fontFamily};
   `,
   desktopInputText: () => css`
-    font: 300 20px/19px ${fontFamily};
+    font: 300 19px/19px ${fontFamily};
   `,
   desktopSmallText: () => css`
     font: 300 15px/20px ${fontFamily};

@@ -20,6 +20,7 @@ const Home = () => {
             {stateInvestCompanyMock.map(wallet => (
               <Card key={wallet.id}>
                 <ClientWallet
+                  id={wallet.id}
                   name={wallet.name}
                   totalMoney={wallet.totalMoney}
                   amountCryptos={wallet.cryptos.length}
