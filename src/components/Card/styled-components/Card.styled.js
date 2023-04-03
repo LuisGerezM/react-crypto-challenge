@@ -6,6 +6,7 @@ const WrapCard = styled.div`
   border-radius: 12px;
   border: 2px solid ${themeColors.blueGray};
   margin-top: 10px;
+  min-height: ${({ show }) => (show ? "auto" : "250px")};
 
   box-shadow: ${someOtherProperties.globalShadowBoxCards};
 
