@@ -1,15 +1,21 @@
 const dictionarySchema = {
+  addAmountMoney: { es: "Ingresa la cantidad de dinero..." },
+  addWalletName: { es: "Ingresa el nombre de cartera..." },
+  amountMoney: { es: "Cantidad de dinero" },
   assets: {
     es: "activos"
   },
   avaible: {
     es: "Disponible"
   },
+  createNewWallet: {
+    es: "Crear Nueva cartera"
+  },
   editClientWallet: {
-    es: "Editar esta billetera"
+    es: "Editar esta cartera"
   },
   deleteNameWallet: {
-    es: "Eliminar esta billetera"
+    es: "Eliminar esta cartera"
   },
   errorBunderyText: {
     es: "Ups... Parece que algo salió mal! Comunicate con el administrador por favor. Serás redirigido a la pantalla principal"
@@ -25,6 +31,9 @@ const dictionarySchema = {
   },
   total: {
     es: "Total"
+  },
+  walletName: {
+    es: "Nombre de la cartera"
   }
 };
 
