@@ -1,3 +1,4 @@
+export { default as ErrorsValidationForm } from "./ErrorsValidationForm";
 export { default as AlertMsg } from "./AlertMsg";
 export { default as Card } from "./Card";
 export { default as ComponentErrorView } from "./ComponentErrorView";
