@@ -1,8 +1,10 @@
+import { fadeIn } from "@/styled-components";
 import styled from "styled-components";
 
 const WrapClientWallet = styled.div`
   display: flex;
   flex-flow: row nowrap;
+  ${fadeIn}
 `;
 
 const WrapSectionHeaderClientWallet = styled.div`
