@@ -9,8 +9,8 @@ import { v4 as uuidv4 } from "uuid";
 const initialClientsWalletState = {
   loading: false,
   clientsWallet: [],
-  success: { status: false, message: "" },
-  error: { status: false, message: "" }
+  success: { status: false, message: "", action: "" },
+  error: { status: false, message: "", action: "" }
 };
 
 const clientsWalletSlice = createSlice({
@@ -39,10 +39,20 @@ const clientsWalletSlice = createSlice({
         ...state,
         clientsWallet
       };
+    },
+    deleteClientWallet: (state, action) => {
+      const clientsWallet = current(state).clientsWallet.filter(
+        wallet => wallet.id !== action.payload
+      );
+
+      persistLocalStorage(LocalStorageTypes.CLIENTS_WALLET, clientsWallet);
+
+      return { ...state, clientsWallet };
     }
   }
 });
 
-export const { addClientWallet } = clientsWalletSlice.actions;
+export const { addClientWallet, deleteClientWallet } =
+  clientsWalletSlice.actions;
 
 export default clientsWalletSlice.reducer;

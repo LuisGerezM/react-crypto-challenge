@@ -1,6 +1,9 @@
 import { CustomImage } from "@/components";
+import { deleteClientWallet } from "@/redux/states/clientsWallet";
 import { dictionary, imagesSrc } from "@/schemas";
 import { SubtitleText } from "@/styled-components";
+import { userConfirm } from "@/utilities";
+import { useDispatch } from "react-redux";
 import { HeaderClientWallet, DetailsClientWallet } from "..";
 import {
   WrapClientWallet,
@@ -9,12 +12,21 @@ import {
 } from "./styled-components";
 
 const ClientWallet = ({ id, name, totalMoney, amountCryptos }) => {
+  const dispatch = useDispatch();
+
   const editClientWallet = walletId => {
     console.log("click edit", walletId);
   };
 
-  const deleteClientWallet = walletId => {
+  const deleteOneClientWallet = async (walletId, name) => {
     console.log("click delete", walletId);
+    const text = `¿${dictionary("confirmDeleteClientWallet")} ${name}?`;
+    const confirmAction = await userConfirm(text);
+
+    if (!confirmAction) return;
+    console.log("trueee");
+
+    dispatch(deleteClientWallet(walletId));
   };
 
   return (
@@ -42,7 +54,7 @@ const ClientWallet = ({ id, name, totalMoney, amountCryptos }) => {
               imgClass: "col col-9 py-1",
               buttonMargin: "ms-3 ms-md-4 ms-lg-5",
               color: "light",
-              onClick: () => deleteClientWallet(id)
+              onClick: () => deleteOneClientWallet(id, name)
             }}
           </HeaderClientWallet>
         </WrapSectionHeaderClientWallet>
