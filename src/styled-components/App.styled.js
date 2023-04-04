@@ -80,6 +80,7 @@ const CustomContainer = styled.div`
   width: 92%;
   padding: 0;
   margin: 105px auto 10px;
+  max-width: 1250px;
 `;
 
 const CustomContentSection = styled.div`
@@ -88,7 +89,7 @@ const CustomContentSection = styled.div`
   margin-top: 25px;
   border: 2px solid ${themeColors.lightgray};
   border-radius: 12px;
-  padding: 15px 15px 24px;
+  padding: 15px 30px 24px;
 `;
 
 export {

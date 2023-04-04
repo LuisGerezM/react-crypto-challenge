@@ -1,6 +1,5 @@
 import { AlertMsg, Card, CustomButton } from "@/components";
 import { routes } from "@/models";
-import { LocalStorageTypes } from "@/models/localStorage.model";
 import { dictionary } from "@/schemas";
 import { CustomContentSection } from "@/styled-components";
 import { useSelector } from "react-redux";
