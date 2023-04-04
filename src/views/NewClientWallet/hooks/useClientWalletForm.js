@@ -1,5 +1,5 @@
 import { routes } from "@/models";
-import { addClientWallet } from "@/redux/states";
+import { addClientWallet } from "@/redux/states/clientsWallet";
 import { feedbackUser, userConfirm } from "@/utilities";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";

@@ -1,5 +1,8 @@
 import { LocalStorageTypes } from "@/models/localStorage.model";
-import { persistLocalStorage } from "@/utilities/localStorage.util";
+import {
+  getItemLocalStorage,
+  persistLocalStorage
+} from "@/utilities/localStorage.util";
 import { createSlice, current } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
 
@@ -12,14 +15,12 @@ const initialClientsWalletState = {
 
 const clientsWalletSlice = createSlice({
   name: "clientsWallet",
-  initialState: localStorage.getItem(LocalStorageTypes.CLIENTS_WALLET)
-    ? {
-        ...initialClientsWalletState,
-        clientsWallet: JSON.parse(
-          localStorage.getItem(LocalStorageTypes.CLIENTS_WALLET)
-        )
-      }
-    : initialClientsWalletState,
+  initialState: {
+    ...initialClientsWalletState,
+    clientsWallet:
+      getItemLocalStorage(LocalStorageTypes.CLIENTS_WALLET) ||
+      initialClientsWalletState.clientsWallet
+  },
   reducers: {
     addClientWallet: (state, action) => {
       const clientsWallet = [
