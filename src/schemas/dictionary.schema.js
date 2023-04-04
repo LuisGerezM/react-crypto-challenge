@@ -11,6 +11,9 @@ const dictionarySchema = {
   createNewWallet: {
     es: "Crear Nueva cartera"
   },
+  confirmDeleteClientWallet: {
+    es: "Confirma que desea eliminar cartera"
+  },
   editClientWallet: {
     es: "Editar esta cartera"
   },
