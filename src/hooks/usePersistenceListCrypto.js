@@ -16,7 +16,6 @@ export const usePersistenceListCrypto = () => {
       try {
         const url = URLs.allCryptos;
         const fetching = await fetchAPI({ url });
-
         if (fetching.error) dispatch(addCryptoList(backUpCryptoList));
         else {
           const adaptedCryptos = orderArrayBy(
@@ -37,6 +36,7 @@ export const usePersistenceListCrypto = () => {
     const interval = setInterval(() => {
       fetchData();
     }, 225000);
+
     return () => {
       clearInterval(interval);
     };
