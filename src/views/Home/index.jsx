@@ -2,6 +2,7 @@ import { AlertMsg, Card, CustomButton } from "@/components";
 import { routes } from "@/models";
 import { dictionary } from "@/schemas";
 import { CustomContentSection } from "@/styled-components";
+import { toFixedCryptoNumber } from "@/utilities";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { ClientWallet } from "./components";
@@ -32,7 +33,7 @@ const Home = () => {
                 <ClientWallet
                   id={wallet.id}
                   name={wallet.nameWallet}
-                  totalMoney={wallet.totalMoney}
+                  totalMoney={toFixedCryptoNumber(wallet.totalMoney, 8)}
                   amountCryptos={wallet.cryptos.length}
                 />
               </Card>

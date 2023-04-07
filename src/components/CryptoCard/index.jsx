@@ -1,5 +1,6 @@
 import { useCryptoCard } from "@/hooks";
 import { movementFromMoneyToCrypto, toFixedCryptoNumber } from "@/utilities";
+import { limitString } from "@/utilities/limitString.util";
 import { Children, cloneElement } from "react";
 import { Card, CustomImage } from "..";
 import ReferenceParagraphs from "./components/ReferenceParagraphs";
@@ -35,7 +36,7 @@ const CryptoCard = ({
         <WrapNameAndIconCrypto className='WrapNameAndIconCrypto col col-5'>
           <CustomImage wrapImgClass='col col-4 col-md-2' src={crypto.image} />
           <WrapNameAndSymbol className='WrapNameAndSymbol col col-8'>
-            <div>{crypto.name}</div>
+            <div>{limitString(crypto.name)}</div>
             <div>{crypto.symbol}</div>
           </WrapNameAndSymbol>
         </WrapNameAndIconCrypto>
