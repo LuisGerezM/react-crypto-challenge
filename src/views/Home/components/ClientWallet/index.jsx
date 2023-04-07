@@ -1,21 +1,16 @@
 import { CustomImage } from "@/components";
 import { dictionary, imagesSrc } from "@/schemas";
 import { SubtitleText } from "@/styled-components";
-import { HeaderClientWallet, DetailsClientWallet } from "..";
+import { DetailsClientWallet, HeaderClientWallet } from "..";
+import { useClientWallet } from "../../hooks";
 import {
   WrapClientWallet,
-  WrapSectionHeaderClientWallet,
-  WrapSectionDetailsClientWallet
+  WrapSectionDetailsClientWallet,
+  WrapSectionHeaderClientWallet
 } from "./styled-components";
 
 const ClientWallet = ({ id, name, totalMoney, amountCryptos }) => {
-  const editClientWallet = walletId => {
-    console.log("click edit", walletId);
-  };
-
-  const deleteClientWallet = walletId => {
-    console.log("click delete", walletId);
-  };
+  const { editClientWallet, deleteOneClientWallet } = useClientWallet();
 
   return (
     <WrapClientWallet className='WrapClientWallet'>
@@ -42,7 +37,7 @@ const ClientWallet = ({ id, name, totalMoney, amountCryptos }) => {
               imgClass: "col col-9 py-1",
               buttonMargin: "ms-3 ms-md-4 ms-lg-5",
               color: "light",
-              onClick: () => deleteClientWallet(id)
+              onClick: () => deleteOneClientWallet(id, name)
             }}
           </HeaderClientWallet>
         </WrapSectionHeaderClientWallet>

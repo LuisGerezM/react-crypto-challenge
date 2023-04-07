@@ -1,9 +1,10 @@
+import { dictionary } from "@/schemas";
 import Swal from "sweetalert2";
 
 export const feedbackUser = (
   position = "center",
   icon = "success",
-  title = "Operación exitosa"
+  title = dictionary("successfulOperation")
 ) =>
   Swal.fire({
     position,

@@ -1,3 +1,4 @@
+import { fadeIn } from "@/styled-components";
 import styled from "styled-components";
 
 const WrapImage = styled.div`
@@ -9,6 +10,7 @@ const WrapImage = styled.div`
 const Image = styled.img`
   display: ${({ loadingImage }) => (loadingImage ? "none" : "block")};
   width: ${({ width }) => width};
+  ${fadeIn}
 `;
 
 export { Image, WrapImage };

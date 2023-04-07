@@ -12,7 +12,7 @@ const InKeyFrames = keyframes`
     }
 `;
 
-const fadeIn = ({ time = "1.5s", type = "ease" } = {}) => css`
+const fadeIn = ({ time = "1s", type = "ease" } = {}) => css`
   animation: ${time} ${InKeyFrames} ${type};
 `;
 

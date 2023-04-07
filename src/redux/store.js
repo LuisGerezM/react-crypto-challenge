@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import clientsWallet from "./states/clientsWallet";
+
+import { clientsWalletSlice, listCryptocurrencySlice } from "./states";
 
 export default configureStore({
   reducer: {
-    clientsWallet
+    listCryptocurrency: listCryptocurrencySlice,
+    clientsWallet: clientsWalletSlice
   }
 });

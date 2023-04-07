@@ -1,6 +1,5 @@
 import { AlertMsg, Card, CustomButton } from "@/components";
 import { routes } from "@/models";
-import { LocalStorageTypes } from "@/models/localStorage.model";
 import { dictionary } from "@/schemas";
 import { CustomContentSection } from "@/styled-components";
 import { useSelector } from "react-redux";
@@ -10,9 +9,7 @@ import { SectionAddClientWallet, WrapHome } from "./styled-components";
 
 const Home = () => {
   const { clientsWallet } = useSelector(store => store.clientsWallet);
-
   const navigate = useNavigate();
-
   const newWallet = () => navigate(routes.NEW_CLIENT_WALLET, { replace: true });
 
   return (

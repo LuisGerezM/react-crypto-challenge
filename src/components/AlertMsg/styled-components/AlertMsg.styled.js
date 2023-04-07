@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 const CustomAlertMsg = styled.div`
   ${titleCssStyle};
-  width: 50%;
   margin: 30px auto;
   background-color: ${themeColors.red};
   color: ${themeColors.white};
