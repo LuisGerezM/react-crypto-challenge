@@ -1,6 +1,7 @@
 import { Card, CustomButton, CustomImage } from "@/components";
 import { dictionary } from "@/schemas";
 import { SubtitleText, TitleText } from "@/styled-components";
+import { toFixedCryptoNumber } from "@/utilities";
 import {
   ActionsClientPersonalWallet,
   SectionTopClientPersonalWallet
@@ -12,6 +13,10 @@ const TopClientPersonalWallet = ({
   newCrypto,
   idWallet
 }) => {
+  const btnDisabled =
+    clientWallet.transactions &&
+    Object.keys(clientWallet.transactions).length > 0;
+
   return (
     <SectionTopClientPersonalWallet>
       <Card cardClass='col col-12 col-md-7' borderColor='lightgray'>
@@ -22,7 +27,8 @@ const TopClientPersonalWallet = ({
               {dictionary("avaible")}: ${clientWallet.moneyAvaible}
             </SubtitleText>
             <SubtitleText className='text-center text-sm-start'>
-              {dictionary("totalMoney")}: ${clientWallet.totalMoney}
+              {dictionary("totalMoney")}: $
+              {toFixedCryptoNumber(clientWallet.totalMoney, 8)}
             </SubtitleText>
           </div>
           <div>
@@ -49,12 +55,15 @@ const TopClientPersonalWallet = ({
           onClick={() => newCrypto(idWallet)}
           buttonClass='col col-5 col-sm-5 col-md-5 me-md-1 me-lg-5'
         />
-        <CustomButton
-          text={dictionary("transactions")}
-          onClick={() => whatShowModal("transactions")}
-          buttonClass='col col-5 col-sm-5 col-md-6 col-lg-5'
-          color='yellow'
-        />
+
+        {btnDisabled && (
+          <CustomButton
+            text={dictionary("transactions")}
+            onClick={() => whatShowModal("transactions")}
+            buttonClass='col col-5 col-sm-5 col-md-6 col-lg-5'
+            color='yellow'
+          />
+        )}
       </ActionsClientPersonalWallet>
     </SectionTopClientPersonalWallet>
   );
