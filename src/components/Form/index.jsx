@@ -28,7 +28,10 @@ const ClientWalletForm = ({ cancelOperation, onSubmit }) => {
             {...register(
               element.name,
               element.name === "nameWallet"
-                ? validationFieldWithCtrol(clientsWallet)[element.name]
+                ? validationFieldWithCtrol({
+                    clientsWallet,
+                    nameWallet: clientWallet?.nameWallet
+                  })[element.name]
                 : validationFields[element.name]
             )}
           />

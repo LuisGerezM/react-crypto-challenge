@@ -67,11 +67,6 @@ Este proyecto fue creado con [**Vite**](https://vitejs.dev/guide/), utiliza las 
 - Algunas otras caracteristicas:
 
   - Manejo de errores internos - Error Boundary
-  - Infomacion ordenada descendentemente:
-
-    - cryptos por precio actual.
-    - carteras por precio total.
-
   - Formularios con validaciones.
   - Compras de criptomonedas en base a las que aún no se tienen.
   - Se puede comprar más criptomonedas de las que ya tiene.
