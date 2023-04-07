@@ -111,4 +111,4 @@ Para poder verlo en el navegador, abrir: [http://localhost:4173/](http://localho
 
 ## <img src="https://img.icons8.com/color/26/null/person-male.png"/> Desarrollado por:
 
-- Gerez Martinez Luis [<img src="https://img.icons8.com/material-rounded/24/null/github.png"/>](https://github.com/LuisGerezM) [<img src="https://img.icons8.com/fluency/24/null/linkedin.png"/>](https://www.linkedin.com/in/luisgerezm/)
+- Gerez Martinez Luis [<img src="https://img.icons8.com/fluency/24/null/linkedin.png"/>](https://www.linkedin.com/in/luisgerezm/)
