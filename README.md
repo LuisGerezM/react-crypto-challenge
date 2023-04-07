@@ -58,8 +58,28 @@ Este proyecto fue creado con [**Vite**](https://vitejs.dev/guide/), utiliza las 
   - Clean architecture adaptada al front end.
   - Arquitectura basada en componentes.
 - Además se utilizó:
+  <<<<<<< HEAD
+
   - Intersection Observer API.
   - API fetch.
+
+- Algunas otras caracteristicas:
+
+  - Infomacion ordenada descendentemente:
+    - cryptos por precio actual.
+    - carteras por precio total.
+
+  * Formularios con validaciones.
+  * Compras de criptomonedas en base a las que aún no se tienen.
+  * Se puede comprar más criptomonedas de las que ya tiene.
+  * Ciclo de actualización de la lista de criptomonedas cada 225000 ms.
+
+=======
+
+- Intersection Observer API.
+- API fetch.
+
+> > > > > > > 00eb8e55e069d57fce66d890f3787de4aa94b462
 
 ### - Pendientes:
 
@@ -88,7 +108,7 @@ Para poder verlo en el navegador, abrir: [http://localhost:5173/](http://localho
 
 ### <img src="https://img.icons8.com/color/35/null/backend-development--v1.png"/> Modo Production
 
-### `pnpm run build-preview`
+### `npm o pnpm run build-preview`
 
 Para replicar la app en modo producción.
 
