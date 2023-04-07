@@ -55,8 +55,10 @@ Este proyecto fue creado con [**Vite**](https://vitejs.dev/guide/), utiliza las 
 ## <img src="https://img.icons8.com/external-others-pike-picture/50/null/external-Product-Information-market-others-pike-picture.png"/> Información adicional
 
 - En el desarrollo se buscó utilizar:
+
   - Clean architecture adaptada al front end.
   - Arquitectura basada en componentes.
+
 - Además se utilizó:
 
   - Intersection Observer API.
@@ -64,14 +66,11 @@ Este proyecto fue creado con [**Vite**](https://vitejs.dev/guide/), utiliza las 
 
 - Algunas otras caracteristicas:
 
-  - Infomacion ordenada descendentemente:
-    - cryptos por precio actual.
-    - carteras por precio total.
-
-  * Formularios con validaciones.
-  * Compras de criptomonedas en base a las que aún no se tienen.
-  * Se puede comprar más criptomonedas de las que ya tiene.
-  * Ciclo de actualización de la lista de criptomonedas cada 225000 ms.
+  - Manejo de errores internos - Error Boundary
+  - Formularios con validaciones.
+  - Compras de criptomonedas en base a las que aún no se tienen.
+  - Se puede comprar más criptomonedas de las que ya tiene.
+  - Ciclo de actualización de la lista de criptomonedas cada 225000 ms.
 
 ### - Pendientes:
 
