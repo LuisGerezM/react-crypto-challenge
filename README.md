@@ -70,7 +70,7 @@ Este proyecto fue creado con [**Vite**](https://vitejs.dev/guide/), utiliza las 
   - Formularios con validaciones.
   - Compras de criptomonedas en base a las que aún no se tienen.
   - Se puede comprar más criptomonedas de las que ya tiene.
-  - Ciclo de actualización de la lista de criptomonedas cada 225000 ms.
+  - Ciclo de actualización de la lista de criptomonedas cada 225000 ms. (Tiempo estimado en que la API refresca los datos)
 
 ### - Pendientes:
 

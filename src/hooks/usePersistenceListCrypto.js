@@ -22,7 +22,6 @@ export const usePersistenceListCrypto = () => {
             fetching.map(crypto => cryptoAdapter(crypto)),
             "price"
           );
-
           setBackUpCryptoList(adaptedCryptos);
           dispatch(addCryptoList(adaptedCryptos));
         }
