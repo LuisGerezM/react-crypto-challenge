@@ -1,13 +1,12 @@
 import { routes } from "@/models";
 import { addClientWallet } from "@/redux/states/clientsWallet";
+import { dictionary } from "@/schemas";
 import { feedbackUser, userConfirm } from "@/utilities";
 import { useForm } from "react-hook-form";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const useClientWalletForm = () => {
-  const { clientsWallet } = useSelector(store => store.clientsWallet);
-
   const dispatch = useDispatch();
 
   const {
@@ -23,19 +22,23 @@ const useClientWalletForm = () => {
   };
 
   const onSubmit = async data => {
-    const confirmAction = await userConfirm();
+    try {
+      const confirmAction = await userConfirm();
 
-    if (!confirmAction) return;
+      if (!confirmAction) return;
 
-    dispatch(addClientWallet(data));
+      dispatch(addClientWallet(data));
 
-    feedbackUser();
-    navigate(routes.HOME, { replace: true });
+      feedbackUser();
+      navigate(routes.HOME, { replace: true });
+    } catch (error) {
+      console.error("Error use client wallet form", error.message);
+      feedbackUser({ icon: "error", title: dictionary("anErrorOcurred") });
+    }
   };
 
   return {
     register,
-    clientsWallet,
     errors,
     handleSubmit,
     onSubmit,

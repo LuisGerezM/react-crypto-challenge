@@ -1,33 +1,16 @@
 import { CustomImage } from "@/components";
-import { deleteClientWallet } from "@/redux/states/clientsWallet";
 import { dictionary, imagesSrc } from "@/schemas";
 import { SubtitleText } from "@/styled-components";
-import { userConfirm } from "@/utilities";
-import { useDispatch } from "react-redux";
-import { HeaderClientWallet, DetailsClientWallet } from "..";
+import { DetailsClientWallet, HeaderClientWallet } from "..";
+import { useClientWallet } from "../../hooks";
 import {
   WrapClientWallet,
-  WrapSectionHeaderClientWallet,
-  WrapSectionDetailsClientWallet
+  WrapSectionDetailsClientWallet,
+  WrapSectionHeaderClientWallet
 } from "./styled-components";
 
 const ClientWallet = ({ id, name, totalMoney, amountCryptos }) => {
-  const dispatch = useDispatch();
-
-  const editClientWallet = walletId => {
-    console.log("click edit", walletId);
-  };
-
-  const deleteOneClientWallet = async (walletId, name) => {
-    console.log("click delete", walletId);
-    const text = `¿${dictionary("confirmDeleteClientWallet")} ${name}?`;
-    const confirmAction = await userConfirm(text);
-
-    if (!confirmAction) return;
-    console.log("trueee");
-
-    dispatch(deleteClientWallet(walletId));
-  };
+  const { editClientWallet, deleteOneClientWallet } = useClientWallet();
 
   return (
     <WrapClientWallet className='WrapClientWallet'>

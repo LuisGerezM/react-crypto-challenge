@@ -1,5 +1,7 @@
+import { cryptoAdapter } from "@/adapter/cryptoAdapter";
 import { addCryptoList } from "@/redux/states/listCryptocurrency";
 import { fetchAPI, URLs } from "@/services";
+import { orderArrayBy } from "@/utilities";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
@@ -15,19 +17,23 @@ export const usePersistenceListCrypto = () => {
 
       if (fetching.error) dispatch(addCryptoList(backUpCryptoList));
       else {
-        setBackUpCryptoList(fetching);
-        dispatch(addCryptoList(fetching));
+        const adaptedCryptos = orderArrayBy(
+          fetching.map(crypto => cryptoAdapter(crypto)),
+          "price"
+        );
+
+        setBackUpCryptoList(adaptedCryptos);
+        dispatch(addCryptoList(adaptedCryptos));
       }
     };
 
     fetchData();
 
-    // const interval = setInterval(() => {
-    //   console.log("Interval");
-    //   fetchData();
-    // }, 225000);
+    const interval = setInterval(() => {
+      fetchData();
+    }, 225000);
     return () => {
-      // clearInterval(interval);
+      clearInterval(interval);
     };
   }, []);
 };

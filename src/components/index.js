@@ -1,8 +1,16 @@
+export { default as ActionCryptoForm } from "./ActionCryptoForm";
+export { default as CustomButtonAndImage } from "./CustomButtonAndImage";
+export { default as Form } from "./Form";
+export { default as BackToHome } from "./BackToHome";
 export { default as ErrorsValidationForm } from "./ErrorsValidationForm";
 export { default as AlertMsg } from "./AlertMsg";
 export { default as Card } from "./Card";
 export { default as ComponentErrorView } from "./ComponentErrorView";
 export { default as CustomButton } from "./CustomButton";
+export { default as CryptoCard } from "./CryptoCard";
+export { default as WrapCryptoList } from "./WrapCryptoList";
+export { default as CustomModal } from "./CustomModal/CustomModal";
 export * from "./Loading";
 export * from "./Image";
 export * from "./Header";
+export * from "./LinkReactRouter";

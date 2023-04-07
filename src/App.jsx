@@ -1,22 +1,32 @@
-import { useState } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
-import { ComponentErrorView, CustomImage, Navbar } from "./components";
+import { lazy, Suspense, useState } from "react";
+import { Route, useLocation } from "react-router-dom";
+import {
+  BackToHome,
+  ComponentErrorView,
+  CustomImage,
+  Navbar,
+  SpinnerLoad
+} from "./components";
 import { usePersistenceListCrypto } from "./hooks";
 import { routes } from "./models";
 import { RoutesNoMatch } from "./routes";
 import { dictionary, imagesSrc } from "./schemas";
 import { CustomContainer, GlobalStyle } from "./styled-components";
 import { ErrorBoundary } from "./utilities";
-import { ClientPersonalWallet, CryptoList, Home } from "./views";
-import NewClientWallet from "./views/NewClientWallet";
+
+const ClientPersonalWallet = lazy(() => import("./views/ClientPersonalWallet"));
+const CryptoList = lazy(() => import("./views/CryptoList"));
+const Home = lazy(() => import("./views/Home"));
+const NewClientWallet = lazy(() => import("./views/NewClientWallet"));
 
 export const App = () => {
   const [returnToHome, setReturnToHome] = useState(false);
+  const { pathname } = useLocation();
 
   usePersistenceListCrypto();
 
   return (
-    <BrowserRouter>
+    <>
       <GlobalStyle />
       <ErrorBoundary
         returnToHome={returnToHome}
@@ -37,20 +47,26 @@ export const App = () => {
       >
         <Navbar />
         <CustomContainer className='Container'>
-          <RoutesNoMatch>
-            <Route path={routes.HOME} element={<Home />} />
-            <Route
-              path={routes.CLIENT_PERSONAL_WALLET}
-              element={<ClientPersonalWallet />}
-            />
-            <Route path={routes.CRIPTO_LIST} element={<CryptoList />} />
-            <Route
-              path={routes.NEW_CLIENT_WALLET}
-              element={<NewClientWallet />}
-            />
-          </RoutesNoMatch>
+          {pathname !== "/" && <BackToHome />}
+          <Suspense fallback={<SpinnerLoad />}>
+            <RoutesNoMatch>
+              <Route path={routes.HOME} element={<Home />} />
+              <Route
+                path={`${routes.CLIENT_PERSONAL_WALLET}/:id`}
+                element={<ClientPersonalWallet />}
+              />
+              <Route
+                path={`${routes.CRIPTO_LIST}/:id`}
+                element={<CryptoList />}
+              />
+              <Route
+                path={routes.NEW_CLIENT_WALLET}
+                element={<NewClientWallet />}
+              />
+            </RoutesNoMatch>
+          </Suspense>
         </CustomContainer>
       </ErrorBoundary>
-    </BrowserRouter>
+    </>
   );
 };
