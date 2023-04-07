@@ -68,26 +68,31 @@ Este proyecto fue creado con [**Vite**](https://vitejs.dev/guide/), utiliza las 
 
   - Manejo de errores internos - Error Boundary
   - Formularios con validaciones.
-  - Compras de criptomonedas en base a las que aún no se tienen.
+  - Compras de criptomonedas en base a las que aún no se tienen, ya que la lista de criptomonedas disponibles filtra las que ya existe en la cartera.
   - Se puede comprar más criptomonedas de las que ya tiene.
+  - Vender criptomoneda parcial o completamente.
   - Ciclo de actualización de la lista de criptomonedas cada 225000 ms. (Tiempo estimado en que la API refresca los datos)
+  - El nombre de cartera es único.
+  - La cartera puede ser editada tanto por nombre y/o dinero. Si no se requiere editar el dinero, como un mensaje indicará en ese caso, se debe añadir un 0 en el campo.
+  - El botón para ver transacciones sólo se muestra si existen las mismas
+  - El nombre de las criptomonedas se ajustan dependiendo al dispositivo.
 
 ### - Pendientes:
 
-    - Tests unitarios.
+    - Testing.
 
 ---
 
 ## <img src="https://img.icons8.com/office/30/null/console.png"/> Cómo probarlo localmente
 
-- Clona el proyecto en alguna carpeta
+- Puede clonar el proyecto en alguna carpeta, descargarlo en un archivo comprimido.
 - Necesitas tener instalado `Node`.
-- Podrás usar npm o pnpm, por preferencia en base a rendimiento elijo `pnpm` ( [instalar pnpm ](https://www.npmjs.com/package/pnpm))
-- Una vez clonado el proyecto podrás usar los siguientes scripts:
+- Puede usar npm o pnpm, por preferencia en base a rendimiento elijo `pnpm` ( [instalar pnpm ](https://www.npmjs.com/package/pnpm))
+- Una vez clonado el proyecto puede usar los siguientes scripts:
 
 ### `npm o pnpm install`
 
-Para instalarte todos las dependencias que utiliza el proyecto.
+Para instalar todos las dependencias que utiliza el proyecto.
 
 ### <img src="https://img.icons8.com/office/25/null/Production-order-history.png"/> Modo Development
 
