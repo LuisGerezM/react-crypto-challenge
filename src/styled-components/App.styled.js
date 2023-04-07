@@ -76,7 +76,6 @@ const scrollbarCssStyles = css`
 `;
 
 const CustomContainer = styled.div`
-  margin-top: 90px;
   width: 92%;
   padding: 0;
   margin: 105px auto 10px;

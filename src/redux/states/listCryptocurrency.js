@@ -1,8 +1,5 @@
-import { LocalStorageTypes } from "@/models/localStorage.model";
-import {
-  getItemLocalStorage,
-  persistLocalStorage
-} from "@/utilities/localStorage.util";
+import { LocalStorageTypes } from "@/models";
+import { getItemLocalStorage, persistLocalStorage } from "@/utilities";
 import { createSlice } from "@reduxjs/toolkit";
 
 const listOfCryptos = [];

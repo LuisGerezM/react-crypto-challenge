@@ -9,9 +9,7 @@ import { SectionAddClientWallet, WrapHome } from "./styled-components";
 
 const Home = () => {
   const { clientsWallet } = useSelector(store => store.clientsWallet);
-
   const navigate = useNavigate();
-
   const newWallet = () => navigate(routes.NEW_CLIENT_WALLET, { replace: true });
 
   return (

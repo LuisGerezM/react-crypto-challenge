@@ -1,5 +1,4 @@
-import { CustomButton, CustomImage } from "@/components";
-import { dictionary } from "@/schemas";
+import { CustomButtonAndImage } from "@/components";
 
 const HeaderClientWallet = ({ children }) =>
   children.map((element, idx) => (
@@ -7,17 +6,13 @@ const HeaderClientWallet = ({ children }) =>
       {element.type ? (
         element
       ) : (
-        <CustomButton
-          buttonClass={`p-0 d-flex justify-content-center ${element.buttonMargin}`}
+        <CustomButtonAndImage
+          buttonMargin={element.buttonMargin}
           onClick={element.onClick}
           color={element.color}
-          text={
-            <CustomImage
-              title={dictionary(element.title)}
-              wrapImgClass={element.imgClass}
-              src={element.src}
-            />
-          }
+          title={element.title}
+          imgClass={element.imgClass}
+          src={element.src}
         />
       )}
     </span>

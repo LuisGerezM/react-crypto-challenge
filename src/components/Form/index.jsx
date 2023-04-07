@@ -1,18 +1,13 @@
 import { CustomButton, ErrorsValidationForm } from "@/components";
-import { validationFields, validationRepeatField } from "@/utilities";
-import useClientWalletForm from "../../hooks/useClientWalletForm";
-import { newClientWalletInput } from "../../utilities";
+import { validationFields, validationFieldWithCtrol } from "@/utilities";
+import { useFormContext } from "react-hook-form";
+import { useSelector } from "react-redux";
+import { newClientWalletInput } from "../../views/NewClientWallet/utilities";
 import { Form, WrapBtnsForm } from "./styled-components";
 
-const ClientWalletForm = () => {
-  const {
-    register,
-    clientsWallet,
-    errors,
-    handleSubmit,
-    onSubmit,
-    cancelNewClientWallet
-  } = useClientWalletForm();
+const ClientWalletForm = ({ cancelOperation, onSubmit }) => {
+  const { clientsWallet } = useSelector(store => store.clientsWallet);
+  const { register, errors, handleSubmit, clientWallet } = useFormContext();
 
   return (
     <Form className='Form col col-12'>
@@ -26,7 +21,6 @@ const ClientWalletForm = () => {
           </label>
           <input
             className='Form-input form-control'
-            rows='7'
             type={element.type}
             id={element.name}
             name={element.name}
@@ -34,7 +28,7 @@ const ClientWalletForm = () => {
             {...register(
               element.name,
               element.name === "nameWallet"
-                ? validationRepeatField(clientsWallet)[element.name]
+                ? validationFieldWithCtrol(clientsWallet)[element.name]
                 : validationFields[element.name]
             )}
           />
@@ -49,12 +43,14 @@ const ClientWalletForm = () => {
           buttonClass='col col-5 col-sm-3'
           onClick={handleSubmit(onSubmit)}
         />
-        <CustomButton
-          text='cancelar'
-          color='red'
-          buttonClass='col col-5 col-sm-3'
-          onClick={cancelNewClientWallet}
-        />
+        {!clientWallet && (
+          <CustomButton
+            text='cancelar'
+            color='red'
+            buttonClass='col col-5 col-sm-3'
+            onClick={cancelOperation}
+          />
+        )}
       </WrapBtnsForm>
     </Form>
   );
