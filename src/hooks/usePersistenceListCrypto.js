@@ -1,7 +1,8 @@
 import { cryptoAdapter } from "@/adapter/cryptoAdapter";
 import { addCryptoList } from "@/redux/states/listCryptocurrency";
+import { dictionary } from "@/schemas";
 import { fetchAPI, URLs } from "@/services";
-import { orderArrayBy } from "@/utilities";
+import { feedbackUser, orderArrayBy } from "@/utilities";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
@@ -12,18 +13,23 @@ export const usePersistenceListCrypto = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const url = URLs.allCryptos;
-      const fetching = await fetchAPI({ url });
+      try {
+        const url = URLs.allCryptos;
+        const fetching = await fetchAPI({ url });
 
-      if (fetching.error) dispatch(addCryptoList(backUpCryptoList));
-      else {
-        const adaptedCryptos = orderArrayBy(
-          fetching.map(crypto => cryptoAdapter(crypto)),
-          "price"
-        );
+        if (fetching.error) dispatch(addCryptoList(backUpCryptoList));
+        else {
+          const adaptedCryptos = orderArrayBy(
+            fetching.map(crypto => cryptoAdapter(crypto)),
+            "price"
+          );
 
-        setBackUpCryptoList(adaptedCryptos);
-        dispatch(addCryptoList(adaptedCryptos));
+          setBackUpCryptoList(adaptedCryptos);
+          dispatch(addCryptoList(adaptedCryptos));
+        }
+      } catch (error) {
+        console.error("Error use persistence list crypto", error.message);
+        feedbackUser({ icon: "error", title: dictionary("anErrorOcurred") });
       }
     };
 
