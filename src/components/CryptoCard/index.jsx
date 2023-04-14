@@ -1,5 +1,4 @@
 import { useCryptoCard } from "@/hooks";
-import { movementFromMoneyToCrypto, toFixedCryptoNumber } from "@/utilities";
 import { limitString } from "@/utilities/limitString.util";
 import { Children, cloneElement } from "react";
 import { Card, CustomImage } from "..";
@@ -43,7 +42,7 @@ const CryptoCard = ({
         <WrapPriceAndPercentCrypto className='WrapPriceAndPercentCrypto col col-4'>
           <div className='col col-12 col-sm-7 col-lg-5'>
             {crypto.moneyInvested && <ReferenceParagraphs crypto={crypto} />}
-            PRC: ${crypto.price}
+            <b>PRC: </b> ${crypto.price}
           </div>
           <WrapStatusPercent className='WrapStatusPercent col col-4'>
             <CustomImage

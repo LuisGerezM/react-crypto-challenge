@@ -76,6 +76,7 @@ Este proyecto fue creado con [**Vite**](https://vitejs.dev/guide/), utiliza las 
   - La cartera puede ser editada tanto por nombre y/o dinero. Si no se requiere editar el dinero, como un mensaje indicará en ese caso, se debe añadir un 0 en el campo.
   - El botón para ver transacciones sólo se muestra si existen las mismas
   - El nombre de las criptomonedas se ajustan dependiendo al dispositivo.
+  - Diccionario para manejar idiomas. En este proyecto sólo se utiliza el español.
 
 ### - Pendientes:
 
