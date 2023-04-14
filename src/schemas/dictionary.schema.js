@@ -36,6 +36,9 @@ const dictionarySchema = {
   confirmDeleteClientWallet: {
     es: "Confirma que desea eliminar cartera"
   },
+  date: {
+    es: "Fecha"
+  },
   deleteTransaction: {
     es: "Eliminar transaccion"
   },

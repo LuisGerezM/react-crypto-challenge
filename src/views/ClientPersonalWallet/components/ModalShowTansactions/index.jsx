@@ -26,13 +26,15 @@ const ModalShowTansactions = ({ clientWallet }) => {
               >
                 <div className='col col-6 col-lg-12 d-flex flex-column flex-lg-row justify-content-center align-items-center'>
                   <div className='col col-12 col-lg-3'>
-                    <SubtitleText className='text-center'>Fecha:</SubtitleText>
+                    <SubtitleText className='text-center fw-bolder'>
+                      {dictionary("date")}:
+                    </SubtitleText>
                     <InputTexts className='text-center'>
                       {handlerDates.toLocaleString(transaction.date)}
                     </InputTexts>
                   </div>
                   <div className='col col-12 col-lg-4'>
-                    <SubtitleText className='text-center'>
+                    <SubtitleText className='text-center fw-bolder'>
                       {dictionary("crypto")}:
                     </SubtitleText>
                     <InputTexts className='text-center'>
@@ -40,7 +42,7 @@ const ModalShowTansactions = ({ clientWallet }) => {
                     </InputTexts>
                   </div>
                   <div className='col col-12 col-lg-4'>
-                    <SubtitleText className='text-center'>
+                    <SubtitleText className='text-center fw-bolder'>
                       {dictionary("money")}:
                     </SubtitleText>
                     <InputTexts className='text-center'>
@@ -51,15 +53,15 @@ const ModalShowTansactions = ({ clientWallet }) => {
 
                 <div className='col col-6 col-lg-12 d-flex flex-column  flex-lg-row justify-content-start align-items-center mt-0 mt-lg-3'>
                   <div className='col col-12 col-lg-6'>
-                    <SubtitleText className='text-center'>
+                    <SubtitleText className='text-center fw-bolder'>
                       {dictionary("cryptoPrice")}:
                     </SubtitleText>
                     <InputTexts className='text-center'>
-                      {transaction.price}
+                      ${transaction.price}
                     </InputTexts>
                   </div>
                   <div className='col col-12 col-lg-6'>
-                    <SubtitleText className='text-center'>
+                    <SubtitleText className='text-center fw-bolder'>
                       {dictionary("amountCrypto")}:
                     </SubtitleText>
                     <InputTexts className='text-center'>

@@ -20,9 +20,11 @@ const WrapCryptoList = ({
   return (
     <WrapList className='WrapList'>
       <WrapReference>
-        <SubtitleText>{dictionary("references")}:</SubtitleText>
+        <SubtitleText className='fw-bolder'>
+          {dictionary("references")}:
+        </SubtitleText>
         <div className='Ref-paragraph'>
-          <InputTexts>
+          <InputTexts className='fw-bolder'>
             {reference && dictionary("muchReference")}
             {dictionary("singlereference")}
           </InputTexts>
