@@ -12,7 +12,7 @@ export const useFeedbackUserByAction = () => {
   useEffect(() => {
     if (success.status) {
       dispatch(resetStatus());
-      feedbackUser();
+      feedbackUser({});
     }
   }, [success]);
 

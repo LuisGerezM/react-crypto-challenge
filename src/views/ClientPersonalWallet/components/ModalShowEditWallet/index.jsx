@@ -7,11 +7,9 @@ const ModalShowEditWallet = ({ clientWallet }) => {
     useModalShowEditWallet(clientWallet);
 
   return (
-    <div>
-      <FormProvider {...{ register, clientWallet, errors, handleSubmit }}>
-        <ClientWalletForm onSubmit={onSubmit} />
-      </FormProvider>
-    </div>
+    <FormProvider {...{ register, clientWallet, errors, handleSubmit }}>
+      <ClientWalletForm onSubmit={onSubmit} />
+    </FormProvider>
   );
 };
 export default ModalShowEditWallet;
