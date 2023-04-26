@@ -8,7 +8,6 @@ import { useDispatch } from "react-redux";
 const useModalShowEditWallet = clientWallet => {
   const dispatch = useDispatch();
   useFeedbackUserByAction();
-
   const {
     handleSubmit,
     register,
