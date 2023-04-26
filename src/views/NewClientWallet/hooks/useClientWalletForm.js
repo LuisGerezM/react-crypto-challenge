@@ -29,7 +29,7 @@ const useClientWalletForm = () => {
 
       dispatch(addClientWallet(data));
 
-      feedbackUser();
+      feedbackUser({});
       navigate(routes.HOME, { replace: true });
     } catch (error) {
       console.error("Error use client wallet form", error.message);
