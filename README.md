@@ -86,10 +86,11 @@ Este proyecto fue creado con [**Vite**](https://vitejs.dev/guide/), utiliza las 
 
 ## <img src="https://img.icons8.com/office/30/null/console.png"/> Cómo probarlo localmente
 
-- Puede clonar el proyecto en alguna carpeta, descargarlo en un archivo comprimido.
-- Necesitas tener instalado `Node`.
+- Puede clonar el proyecto en alguna carpeta o descargarlo en un archivo comprimido.
+- Necesitará tener instalado `Node`.
 - Puede usar npm o pnpm, por preferencia en base a rendimiento elijo `pnpm` ( [instalar pnpm ](https://www.npmjs.com/package/pnpm))
-- Una vez clonado el proyecto puede usar los siguientes scripts:
+- Tiene que crear en la raíz del proyecto un archivo .env, y agregarle: `VITE_API_BASE_URL=https://api.coingecko.com/api/v3`
+- Una vez clonado o descargado el proyecto puede usar los siguientes scripts:
 
 ### `npm o pnpm install`
 
